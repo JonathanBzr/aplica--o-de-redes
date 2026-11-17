@@ -1,0 +1,41 @@
+ð========================================
+       COMANDOS DE E-MAIL - REDES
+========================================
+
+----------------------------------------
+ SMTP - CRIAR/ENVIAR E-MAIL (porta 25)
+----------------------------------------
+telnet localhost 25
+EHLO tellus.anima.lab
+MAIL FROM: <{animal}@anima.lab>
+RCPT TO: <{colega}@anima.lab>
+DATA
+From: {animal}@anima.lab
+To: {colega}@anima.lab
+Subject: Uma mensagem animal
+
+{Mensagem}
+.
+QUIT
+
+
+----------------------------------------
+ POP3 - LER/LISTAR/DELETAR (porta 100)
+----------------------------------------
+telnet tsi4-tellus 100
+USER {usuario}
+PASS {usuario}2026
+
+LIST              -> lista todas as mensagens
+RETR <num>        -> lê a mensagem de número <num>
+DELE <num>        -> deleta a mensagem de número <num>
+RSET              -> desfaz as deleções marcadas
+QUIT              -> encerra a sessão
+
+
+========================================
+ RESUMO RÁPIDO
+========================================
+ Enviar e-mail  -> SMTP  -> porta 25
+ Ler/Deletar    -> POP3  -> porta 100
+========================================
